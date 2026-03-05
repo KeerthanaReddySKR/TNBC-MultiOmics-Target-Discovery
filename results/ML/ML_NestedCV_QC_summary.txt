@@ -1,0 +1,12 @@
+STEP 9B — Nested Cross-Validation ML QC
+--------------------------------------
+Folds: 10 outer x 5 inner
+Features used: 200
+Samples used: 1218
+TNBC: 123
+Non-TNBC: 1095
+Mean AUC: 0.965
+SD AUC: 0.0253
+
+Per-fold AUC:
+0.9287, 0.9818, 0.9939, 0.9908, 0.9763, 0.9826, 0.9549, 0.9315, 0.935, 0.9741
