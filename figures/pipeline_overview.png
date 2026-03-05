@@ -1,0 +1,17 @@
+TCGA BRCA
+   ↓
+QC
+   ↓
+TNBC cohort selection
+   ↓
+Differential expression
+   ↓
+GSEA
+   ↓
+Mutation integration
+   ↓
+STRING network
+   ↓
+Machine learning ranking
+   ↓
+Final therapeutic targets
