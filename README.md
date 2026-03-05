@@ -150,18 +150,16 @@ The pipeline integrates multiple computational biology tools and resources:
 ---
 ## Statistical Criteria and Thresholds
 
-The following statistical thresholds were applied during the analysis pipeline:
+The following statistical criteria were applied during the analysis pipeline:
 
 | Analysis Step | Threshold / Method |
 |---------------|--------------------|
-Differential expression | FDR < 0.05 |
-Log fold change cutoff | |log2FC| ≥ 1 |
-Gene filtering | Low-expression genes removed |
-GSEA significance | FDR q-value < 0.25 |
-STRING network confidence | Medium confidence (score ≥ 0.4) |
-Network hub identification | Degree centrality ranking |
-Machine learning feature set | Network + DEG filtered genes |
-Model evaluation | Nested cross-validation |
+| Differential expression | FDR < 0.05 |
+| Gene filtering | Low-expression genes removed |
+| GSEA significance | FDR q-value < 0.25 |
+| STRING network confidence | Score ≥ 0.4 |
+| Network hub identification | Degree centrality |
+| Machine learning evaluation | Nested cross-validation |
 
 These criteria ensure that downstream analyses focus on statistically significant and biologically meaningful signals.
 
