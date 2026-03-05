@@ -1,4 +1,4 @@
-## Pipeline Overview
+## TNBC Multi-Omics Target Discovery Pipeline Overview
 This diagram summarizes the computational pipeline used to identify therapeutic targets in TNBC using TCGA transcriptomic data, network biology, and machine learning.
 ```
 TCGA BRCA Dataset
