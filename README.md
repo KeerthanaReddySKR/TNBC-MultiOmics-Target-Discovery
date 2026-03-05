@@ -122,7 +122,10 @@ TNBC-MultiOmics-Target-Discovery
 │   └── targets
 │
 ├── figures
-│   └── pipeline_overview.md
+│   ├── Volcano_TNBC_vs_nonTNBC.png
+│   ├── STRING_seed_network.png
+│   └── Cumulative_score_curve.png
+│   
 │
 ├── README.md
 └── .gitignore
