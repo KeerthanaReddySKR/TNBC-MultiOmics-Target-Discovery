@@ -7,6 +7,15 @@
 A network-guided computational pipeline for identifying potential therapeutic targets in **Triple-Negative Breast Cancer (TNBC)** by integrating **TCGA transcriptomic data**, **protein–protein interaction networks**, and **machine learning-based prioritization**.
 
 The pipeline combines transcriptomic analysis, pathway enrichment, mutation integration, network biology, and predictive modeling to systematically prioritize candidate therapeutic targets.
+---
+
+## Graphical Overview of the Analysis Pipeline
+
+The following figure summarizes the computational workflow used for identifying therapeutic targets in Triple-Negative Breast Cancer (TNBC).
+
+![Pipeline Overview](figures/pipeline_overview.png)
+
+*Figure: Multi-omics computational pipeline integrating TCGA transcriptomic data, pathway enrichment, network biology, and machine learning for therapeutic target discovery.*
 
 ---
 ## Table of Contents
@@ -124,7 +133,8 @@ TNBC-MultiOmics-Target-Discovery
 ├── figures
 │   ├── Volcano_TNBC_vs_nonTNBC.png
 │   ├── STRING_seed_network.png
-│   └── Cumulative_score_curve.png
+    ├── Cumulative_score_curve.png
+│   └── pipeline_overview.png
 │   
 │
 ├── README.md
@@ -144,7 +154,29 @@ The pipeline integrates multiple computational biology tools and resources:
 * **Machine learning models** for therapeutic target prioritization
 
 ---
+## Key Result Visualizations
 
+### Differential Gene Expression
+
+![Volcano Plot](figures/Volcano_TNBC_vs_nonTNBC.png)
+
+*Volcano plot showing significantly upregulated and downregulated genes in TNBC compared with non-TNBC breast cancer samples.*
+
+---
+
+### STRING Protein Interaction Network
+
+![STRING Network](figures/STRING_seed_network.png)
+
+*Protein–protein interaction network highlighting hub genes involved in TNBC regulatory pathways.*
+
+---
+
+### Machine Learning Target Prioritization
+
+![ML Ranking](figures/Cumulative_score_curve.png)
+
+*Cumulative score curve used to determine optimal gene cutoff for STRING network and machine learning target prioritization.*
 # Results
 
 The pipeline identifies candidate genes that may serve as **therapeutic targets in Triple-Negative Breast Cancer (TNBC)** by integrating transcriptomic signals with protein interaction networks and predictive modeling.
