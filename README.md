@@ -417,32 +417,31 @@ This file serves as the primary input for downstream analyses including TNBC coh
 
 ---
 ## Key Results Figures
+## Differential Gene Expression
 
-### Differential Expression Analysis
-
-The volcano plot highlights genes significantly upregulated and downregulated in TNBC compared to non-TNBC samples.
+Differential expression analysis identified genes significantly dysregulated in TNBC compared with non-TNBC breast cancer samples.
 
 ![Volcano Plot](figures/Volcano_TNBC_vs_nonTNBC.png)
 
-Genes with high log2 fold-change and strong statistical significance represent transcriptional programs driving TNBC biology.
+Key upregulated and downregulated genes highlight transcriptional programs associated with tumor progression.
 
 ---
 
-### STRING Protein Interaction Network
+## STRING Protein Interaction Network
 
 Protein–protein interaction analysis using the STRING database identified central hub genes within the TNBC regulatory network.
 
-![STRING Network](figures/STRING_network.png)
+![STRING Network](figures/STRING_seed_network.png)
 
 Highly connected hub genes such as **TP53, EGFR, ESR1, CDK1, and AURKA** represent key regulatory nodes and potential therapeutic targets.
 
 ---
 
-### Machine Learning Target Ranking
+## Machine Learning Target Ranking
 
 Machine learning models were used to prioritize candidate therapeutic targets by integrating transcriptomic signals and network topology.
 
-![ML Target Ranking](figures/ML_target_ranking.png)
+![ML Target Ranking](figures/Cumulative_score_curve.png)
 
 Genes ranked highest by the model represent strong candidates for further biological validation.
 
