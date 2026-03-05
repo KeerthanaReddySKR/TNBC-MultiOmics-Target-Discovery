@@ -5,6 +5,16 @@ A network-guided computational pipeline for identifying potential therapeutic ta
 The pipeline combines transcriptomic analysis, pathway enrichment, mutation integration, network biology, and predictive modeling to systematically prioritize candidate therapeutic targets.
 
 ---
+## Table of Contents
+
+* [Pipeline Overview](#pipeline-overview)
+* [Dataset](#dataset)
+* [Computational Workflow](#computational-workflow)
+* [Repository Structure](#repository-structure)
+* [Key Methods and Tools](#key-methods-and-tools)
+* [Results](#results)
+* [Reproducibility](#reproducibility)
+* [Author](#author)
 
 # Pipeline Overview
 
