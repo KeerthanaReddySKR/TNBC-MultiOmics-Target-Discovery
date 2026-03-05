@@ -289,7 +289,5 @@ To reproduce the analysis:
 
 1. Download TCGA BRCA RNA-seq data.  
 2. Install required R packages listed in:
-
-environment/software_environment.md
-
+   **environment/software_environment.md**
 3. Execute scripts sequentially from the **scripts/** directory.
