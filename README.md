@@ -148,7 +148,24 @@ The pipeline integrates multiple computational biology tools and resources:
 - **Machine learning models** for therapeutic target prioritization
 
 ---
+## Statistical Criteria and Thresholds
 
+The following statistical thresholds were applied during the analysis pipeline:
+
+| Analysis Step | Threshold / Method |
+|---------------|--------------------|
+Differential expression | FDR < 0.05 |
+Log fold change cutoff | |log2FC| ≥ 1 |
+Gene filtering | Low-expression genes removed |
+GSEA significance | FDR q-value < 0.25 |
+STRING network confidence | Medium confidence (score ≥ 0.4) |
+Network hub identification | Degree centrality ranking |
+Machine learning feature set | Network + DEG filtered genes |
+Model evaluation | Nested cross-validation |
+
+These criteria ensure that downstream analyses focus on statistically significant and biologically meaningful signals.
+
+---
 # Results
 
 The pipeline identifies candidate genes that may serve as **therapeutic targets in Triple-Negative Breast Cancer (TNBC)** by integrating transcriptomic signals with protein interaction networks and predictive modeling.
@@ -160,6 +177,7 @@ Intermediate outputs and final results are organized within the **results/** dir
 ## Key Result Visualizations
 
 ### Differential Gene Expression
+Differential expression analysis was performed using limma with empirical Bayes moderation. Genes with FDR < 0.05 and |log2FC| ≥ 1 were considered significantly differentially expressed.
 
 ![Volcano Plot](figures/Volcano_TNBC_vs_nonTNBC.png)
 
