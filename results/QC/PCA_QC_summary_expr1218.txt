@@ -1,0 +1,13 @@
+STEP 4 QC & PCA REPORT
+Date: 2026-01-12 18:38:41.588083
+Genes: 20530
+Samples: 1218
+Total NA values in expression matrix: 0
+Top variable genes used for PCA: 5000
+Variance explained (first 5 PCs):
+  PC1: 14.03% (cumulative 14.03%)
+  PC2: 10.18% (cumulative 24.2%)
+  PC3: 5.09% (cumulative 29.29%)
+  PC4: 4.34% (cumulative 33.63%)
+  PC5: 3.25% (cumulative 36.88%)
+Outliers detected (99% radius): 13
