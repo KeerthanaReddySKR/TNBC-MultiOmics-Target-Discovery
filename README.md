@@ -447,6 +447,15 @@ Machine learning models were used to prioritize candidate therapeutic targets by
 ![ML Target Ranking](figures/Cumulative_score_curve.png)
 
 Genes ranked highest by the model represent strong candidates for further biological validation.
+---
+## Key Findings
+
+- Differential expression analysis identified key genes dysregulated in TNBC compared with other breast cancer subtypes.
+- Network analysis revealed central hub genes including **TP53, EGFR, ESR1, CDK1, and AURKA**.
+- Machine learning models prioritized candidate therapeutic targets by integrating transcriptomic signals with network topology.
+- The integrated pipeline provides a systematic framework for therapeutic target discovery in Triple-Negative Breast Cancer.
+  
+---
 
 # Reproducibility
 
