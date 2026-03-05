@@ -29,7 +29,7 @@ This pipeline integrates **differential gene expression analysis**, **pathway en
 
 This pipeline processes **TCGA breast cancer transcriptomic data** to identify **TNBC-specific gene expression patterns** and prioritize therapeutic targets through **network-guided machine learning**.
 
-## Computational Workflow
+## Pipeline Overview
 
 ```
 TCGA BRCA Dataset
@@ -198,7 +198,9 @@ Differential expression analysis was performed using limma with empirical Bayes 
 *Cumulative score curve used to determine optimal gene cutoff for STRING network and machine learning target prioritization.*
 
 ---
+## Results
 
+The integrated multi-omics analysis identified candidate therapeutic targets in TNBC through differential expression analysis, pathway enrichment, network topology, and machine learning prioritization.
 ## TCGA Data Acquisition
 
 RNA-seq gene expression data for the **TCGA Breast Cancer (BRCA)** cohort was downloaded using the **TCGAbiolinks** package.
