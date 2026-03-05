@@ -4,10 +4,9 @@
 ![Status](https://img.shields.io/badge/Project-Complete-brightgreen)
 # TNBC Multi-Omics Target Discovery
 
-A network-guided computational pipeline for identifying potential therapeutic targets in **Triple-Negative Breast Cancer (TNBC)** by integrating **TCGA transcriptomic data**, **protein–protein interaction networks**, and **machine learning-based prioritization**.
+A network-guided computational framework for identifying potential therapeutic targets in **Triple-Negative Breast Cancer (TNBC)** through the integration of **TCGA transcriptomic data**, **protein–protein interaction networks**, and **machine learning–based target prioritization**.
 
-The pipeline combines transcriptomic analysis, pathway enrichment, mutation integration, network biology, and predictive modeling to systematically prioritize candidate therapeutic targets.
----
+This pipeline integrates differential gene expression analysis, pathway enrichment, mutation data integration, network biology, and predictive modeling to systematically identify and prioritize candidate genes associated with TNBC progression.
 
 ## Table of Contents
 
