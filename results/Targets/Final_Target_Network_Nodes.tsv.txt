@@ -1,0 +1,6 @@
+Gene	Type
+TP53	Hub
+EGFR	Hub
+ERBB2	Hub
+ESR1	Hub
+TNF	Hub

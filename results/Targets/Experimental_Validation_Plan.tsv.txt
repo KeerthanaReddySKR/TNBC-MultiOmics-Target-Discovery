@@ -1,0 +1,6 @@
+Gene	Validation_Type	Assay
+TP53	Mutation + expression	qPCR, Western blot, IHC
+EGFR	Expression + inhibition	qPCR, WB, Drug inhibition assay
+ERBB2	Expression + inhibition	qPCR, WB, Drug inhibition assay
+ESR1	Expression	qPCR, WB
+TNF	Expression + ELISA	qPCR, ELISA

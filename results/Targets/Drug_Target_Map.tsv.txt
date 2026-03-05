@@ -1,0 +1,6 @@
+Gene	Drug	Class
+EGFR	Erlotinib	TKI inhibitor
+ERBB2	Lapatinib	TKI inhibitor
+ESR1	Tamoxifen	Hormone therapy
+TNF	Etanercept	Anti-TNF biologic
+TP53	NA	Mutation-based stratification

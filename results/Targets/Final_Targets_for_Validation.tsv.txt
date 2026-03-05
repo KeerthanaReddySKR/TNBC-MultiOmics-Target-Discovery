@@ -1,0 +1,6 @@
+Gene	Role	Why_Selected
+TP53	Driver tumor suppressor	Mutation + ML + Network hub
+EGFR	RTK oncogene	ML + DE + Network hub + Drug target
+ERBB2	HER2 receptor	ML + Network hub + Drug target
+ESR1	Hormone receptor	ML + DE + Network hub
+TNF	Immune signaling hub	ML + DE + Network hub
