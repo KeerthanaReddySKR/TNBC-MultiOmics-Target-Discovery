@@ -25,7 +25,7 @@ This pipeline integrates **differential gene expression analysis**, **pathway en
 
 ---
 
-# Pipeline Overview
+# Multi-Omics Analysis Pipeline
 
 This pipeline processes **TCGA breast cancer transcriptomic data** to identify **TNBC-specific gene expression patterns** and prioritize therapeutic targets through **network-guided machine learning**.
 
