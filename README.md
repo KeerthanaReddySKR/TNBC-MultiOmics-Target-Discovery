@@ -2,26 +2,32 @@
 ![TCGA](https://img.shields.io/badge/Data-TCGA_BRCA-red)
 ![Machine Learning](https://img.shields.io/badge/Analysis-Machine%20Learning-green)
 ![Status](https://img.shields.io/badge/Project-Complete-brightgreen)
+
 # TNBC Multi-Omics Target Discovery
 
-A network-guided computational framework for identifying potential therapeutic targets in **Triple-Negative Breast Cancer (TNBC)** through the integration of **TCGA transcriptomic data**, **protein–protein interaction networks**, and **machine learning–based target prioritization**.
+A **network-guided computational framework** for identifying potential therapeutic targets in **Triple-Negative Breast Cancer (TNBC)** through the integration of **TCGA transcriptomic data**, **protein–protein interaction networks**, and **machine learning–based target prioritization**.
 
-This pipeline integrates differential gene expression analysis, pathway enrichment, mutation data integration, network biology, and predictive modeling to systematically identify and prioritize candidate genes associated with TNBC progression.
+This pipeline integrates **differential gene expression analysis**, **pathway enrichment**, **mutation data integration**, **network biology**, and **predictive modeling** to systematically identify and prioritize candidate genes associated with **TNBC progression**.
 
-## Table of Contents
+---
 
-* [Pipeline Overview](#pipeline-overview)
-* [Dataset](#dataset)
-* [Computational Workflow](#computational-workflow)
-* [Repository Structure](#repository-structure)
-* [Key Methods and Tools](#key-methods-and-tools)
-* [Results](#results)
-* [Reproducibility](#reproducibility)
-* [Author](#author)
+# Table of Contents
+
+- [Pipeline Overview](#pipeline-overview)
+- [Dataset](#dataset)
+- [Computational Workflow](#computational-workflow)
+- [Repository Structure](#repository-structure)
+- [Key Methods and Tools](#key-methods-and-tools)
+- [Results](#results)
+- [Key Findings](#key-findings)
+- [Reproducibility](#reproducibility)
+- [Author](#author)
+
+---
 
 # Pipeline Overview
 
-This pipeline processes TCGA breast cancer transcriptomic data to identify TNBC-specific gene expression patterns and prioritize therapeutic targets through network-guided machine learning.
+This pipeline processes **TCGA breast cancer transcriptomic data** to identify **TNBC-specific gene expression patterns** and prioritize therapeutic targets through **network-guided machine learning**.
 
 ## Computational Workflow
 
@@ -47,9 +53,9 @@ Machine Learning Target Ranking
 Final Therapeutic Targets
 ```
 
-For a step-by-step explanation of each stage of the analysis pipeline, see the detailed documentation:
+For a detailed explanation of each stage of the analysis pipeline see:
 
-[Pipeline Step Documentation](docs/pipeline_overview.md)
+**[Pipeline Step Documentation](docs/pipeline_overview.md)**
 
 ---
 
@@ -59,9 +65,9 @@ For a step-by-step explanation of each stage of the analysis pipeline, see the d
 
 Datasets used in this project:
 
-* **TCGA-BRCA RNA-seq transcriptomic data**
-* **Clinical metadata**
-* **Somatic mutation data**
+- **TCGA-BRCA RNA-seq transcriptomic data**
+- **Clinical metadata**
+- **Somatic mutation data**
 
 The dataset was filtered to extract **TNBC patient samples** based on receptor status.
 
@@ -71,15 +77,15 @@ The dataset was filtered to extract **TNBC patient samples** based on receptor s
 
 The analysis pipeline consists of the following stages:
 
-1. Sample quality control and filtering
-2. TNBC cohort selection
-3. Differential gene expression analysis using **limma**
-4. Gene set enrichment analysis using **MSigDB Hallmark pathways**
-5. Mutation data integration
-6. Construction of **STRING protein–protein interaction networks**
-7. Network sensitivity analysis
-8. Machine learning-based target ranking
-9. Final candidate therapeutic target identification
+1. Sample quality control and filtering  
+2. TNBC cohort selection  
+3. Differential gene expression analysis using **limma**  
+4. Gene set enrichment analysis using **MSigDB Hallmark pathways**  
+5. Mutation data integration  
+6. Construction of **STRING protein–protein interaction networks**  
+7. Network sensitivity analysis  
+8. Machine learning-based target ranking  
+9. Final candidate therapeutic target identification  
 
 ---
 
@@ -123,9 +129,7 @@ TNBC-MultiOmics-Target-Discovery
 ├── figures
 │   ├── Volcano_TNBC_vs_nonTNBC.png
 │   ├── STRING_seed_network.png
-|   ├── Cumulative_score_curve.png
-│   
-│   
+│   └── Cumulative_score_curve.png
 │
 ├── README.md
 └── .gitignore
@@ -137,13 +141,22 @@ TNBC-MultiOmics-Target-Discovery
 
 The pipeline integrates multiple computational biology tools and resources:
 
-* **R programming language**
-* **limma** for differential expression analysis
-* **MSigDB Hallmark pathways** for gene set enrichment analysis
-* **STRING database** for protein–protein interaction networks
-* **Machine learning models** for therapeutic target prioritization
+- **R programming language**
+- **limma** for differential expression analysis
+- **MSigDB Hallmark pathways** for gene set enrichment analysis
+- **STRING database** for protein–protein interaction networks
+- **Machine learning models** for therapeutic target prioritization
 
 ---
+
+# Results
+
+The pipeline identifies candidate genes that may serve as **therapeutic targets in Triple-Negative Breast Cancer (TNBC)** by integrating transcriptomic signals with protein interaction networks and predictive modeling.
+
+Intermediate outputs and final results are organized within the **results/** directory.
+
+---
+
 ## Key Result Visualizations
 
 ### Differential Gene Expression
@@ -167,51 +180,41 @@ The pipeline integrates multiple computational biology tools and resources:
 ![ML Ranking](figures/Cumulative_score_curve.png)
 
 *Cumulative score curve used to determine optimal gene cutoff for STRING network and machine learning target prioritization.*
-# Results
 
-The pipeline identifies candidate genes that may serve as **therapeutic targets in Triple-Negative Breast Cancer (TNBC)** by integrating transcriptomic signals with protein interaction networks and predictive modeling.
+---
 
-Intermediate outputs and final results are organized within the **results/** directory.
+## TCGA Data Acquisition
 
-
-### TCGA Data Acquisition
-
-RNA-seq gene expression data for the TCGA Breast Cancer (BRCA) cohort was downloaded using the TCGAbiolinks package.
+RNA-seq gene expression data for the **TCGA Breast Cancer (BRCA)** cohort was downloaded using the **TCGAbiolinks** package.
 
 Dataset characteristics:
 
-- Total samples: 1231
-- Data type: Gene Expression Quantification
-- Workflow: STAR – Counts
-- Reference genome: hg38
+| Metric | Value |
+|------|------|
+Total samples | 1231 |
+Data type | Gene Expression Quantification |
+Workflow | STAR – Counts |
+Reference genome | hg38 |
 
-### Expression Matrix Construction
+---
 
-Raw STAR count files were processed and merged into a unified expression matrix.
+## Expression Matrix Construction
 
-Final matrix dimensions:
+Raw STAR count files were merged into a unified expression matrix.
 
-- Genes: 60,664
-- Samples: 1,231
+| Metric | Value |
+|------|------|
+Genes | 60,664 |
+Samples | 1,231 |
 
-Each column corresponds to a TCGA sample, and each row represents a gene feature.
+Each column corresponds to a TCGA sample and each row represents a gene feature.
 
-### Data Structure
+---
 
-The expression matrix was converted into a Bioconductor `SummarizedExperiment` object for compatibility with downstream genomic analysis tools.
-
-Object summary:
-
-Class: SummarizedExperiment  
-Dimensions: 60,664 genes × 1,231 samples  
-Assay: raw STAR count matrix
-
-### Cohort Construction
-
-The TCGA-BRCA dataset was processed to construct a high-quality transcriptomic cohort for TNBC analysis.
+## Cohort Construction
 
 | Dataset | Samples |
-|--------|--------|
+|------|------|
 Total expression samples | 1218 |
 TNBC samples | 123 |
 Non-TNBC samples | 1095 |
@@ -219,30 +222,26 @@ Non-TNBC samples | 1095 |
 For mutation integration:
 
 | Dataset | Samples |
-|--------|--------|
+|------|------|
 Samples with mutation data | 1024 |
 TNBC with mutation data | 121 |
 Non-TNBC with mutation data | 903 |
 
-The final expression matrix contained **20,530 genes across 1,218 samples**.
+Final expression matrix:
+
+**20,530 genes × 1,218 samples**
 
 ---
 
-### Differential Gene Expression
-
-Differential expression analysis was performed using the **limma** package comparing:
-
-**TNBC vs Non-TNBC**
-
-After filtering:
+## Differential Gene Expression
 
 | Metric | Value |
 |------|------|
 Genes analyzed | 20,252 |
-Upregulated genes in TNBC | 1,145 |
-Downregulated genes in TNBC | 1,308 |
+Upregulated genes | 1,145 |
+Downregulated genes | 1,308 |
 
-Generated outputs include:
+Outputs:
 
 ```
 results/DEG/
@@ -253,20 +252,16 @@ results/DEG/
 └── Volcano_TNBC_vs_nonTNBC.png
 ```
 
-These genes represent transcriptional programs associated with TNBC biology.
-
 ---
 
-### Gene Set Enrichment Analysis (GSEA)
-
-Gene ranking from differential expression was used to perform enrichment analysis using **MSigDB Hallmark pathways**.
+## Gene Set Enrichment Analysis
 
 | Metric | Value |
 |------|------|
 Hallmark gene sets tested | 50 |
 Significantly enriched pathways | 24 |
 
-Output files:
+Outputs:
 
 ```
 results/GSEA/
@@ -276,22 +271,11 @@ results/GSEA/
 └── GSEA_Hallmark_TopPathways.png
 ```
 
-These pathways highlight biological processes driving TNBC tumor progression.
-
 ---
 
-### Mutation Integration
+## Mutation Integration
 
-Somatic mutation data from TCGA MAF files was integrated with the transcriptomic cohort.
-
-| Group | Samples |
-|------|------|
-TNBC samples | 121 |
-Non-TNBC samples | 898 |
-
-Mutation frequencies were compared using **Fisher’s Exact Test**.
-
-Significant differentially mutated genes included:
+Significant genes:
 
 ```
 TP53
@@ -302,7 +286,7 @@ PCNT
 CDH1
 ```
 
-Generated outputs:
+Outputs:
 
 ```
 results/mutation/
@@ -313,20 +297,16 @@ results/mutation/
 
 ---
 
-### STRING Protein–Protein Interaction Network
-
-Genes derived from differential expression, mutation signals, and pathway enrichment were integrated into a **STRING interaction network**.
+## STRING Network Analysis
 
 | Metric | Value |
 |------|------|
-Genes used for network | 2458 |
+Genes used | 2458 |
 Mapped STRING genes | 2340 |
 Network nodes | 2277 |
 Network edges | 44,870 |
 
-Network centrality analysis identified highly connected hub genes.
-
-Example hubs include:
+Example hubs:
 
 ```
 TP53
@@ -339,41 +319,21 @@ KIF11
 MKI67
 ```
 
-Outputs:
-
-```
-results/STRING/
-├── STRING_network_files
-└── Top20_STRING_hubs.tsv
-```
-
 ---
 
-### Machine Learning Target Prioritization
+## Machine Learning Target Prioritization
 
-Machine learning models were used to prioritize candidate therapeutic targets by integrating:
+Models used:
 
-- Differential expression
-- Network topology
-- Mutation evidence
-
-Feature set size:
-
-**1118 genes**
-
-Models applied:
-
-- Random Forest
-- LASSO regularization
-
-Model performance:
+- Random Forest  
+- LASSO  
 
 | Metric | Value |
 |------|------|
 Random Forest AUC | 1.0 |
 LASSO lambda | 0.009 |
 
-Final ranked targets were saved in:
+Outputs:
 
 ```
 results/ML_Target_Ranking/
@@ -382,99 +342,39 @@ results/ML_Target_Ranking/
 
 ---
 
-### Top Predicted Therapeutic Targets
+# Key Findings
 
-Top ranked candidate genes include:
-
-| Gene | Evidence |
-|------|------|
-CASD1 | ML + DEG |
-ESR1 | DEG + network hub |
-ERBB2 | DEG |
-C19orf36 | ML signal |
-CA12 | DEG |
-TFF3 | DEG |
-TP53 | mutation + network hub |
-EGFR | network hub |
-RHOB | DEG |
-BPI | DEG |
-
-These genes represent potential therapeutic targets for **Triple-Negative Breast Cancer (TNBC)**.
-
----
-
-### Model Validation
-
-Nested cross-validation was performed to evaluate classification performance.
-
-| Metric | Value |
-|------|------|
-Mean AUC | 0.965 |
-Standard deviation | 0.025 |
-
-This indicates strong predictive power for distinguishing TNBC from non-TNBC samples.
-
----
-
-### Results Directory
-
-All intermediate outputs and final analysis results are organized within:
-
-```
-results/
-├── QC
-├── DEG
-├── GSEA
-├── STRING
-├── ML
-└── targets
-```
-
-Each directory contains analysis outputs, tables, and figures generated by the pipeline.
-
-### Final Dataset
-
-The processed dataset was saved in R serialized format:
-
-data_raw/TCGA_BRCA_STAR_counts_FINAL.rds
-
-This file serves as the primary input for downstream analyses including TNBC cohort selection, differential expression analysis, pathway enrichment, network analysis, and machine learning–based target prioritization.
-
----
-
-## Key Findings
-
-- Differential expression analysis identified key genes dysregulated in TNBC compared with other breast cancer subtypes.
+- Differential expression analysis identified genes dysregulated in TNBC.
 - Network analysis revealed central hub genes including **TP53, EGFR, ESR1, CDK1, and AURKA**.
-- Machine learning models prioritized candidate therapeutic targets by integrating transcriptomic signals with network topology.
-- The integrated pipeline provides a systematic framework for therapeutic target discovery in Triple-Negative Breast Cancer.
-  
+- Machine learning prioritized candidate therapeutic targets using transcriptomic and network signals.
+- The integrated pipeline provides a systematic framework for **therapeutic target discovery in TNBC**.
+
 ---
 
 # Reproducibility
 
 To reproduce the analysis:
 
-1. Download TCGA BRCA RNA-seq data.
-2. Install the required R packages listed in:
+1. Download TCGA BRCA RNA-seq data
+2. Install required packages listed in
 
 ```
 environment/software_environment.md
 ```
 
-3. Execute the scripts sequentially from the **scripts/** directory.
+3. Execute scripts sequentially from the **scripts/** directory.
 
 ---
 
 # Author
 
-**Y. Showri Keerthana**
-B.Tech Bioinformatics
-VFSTR University, India
+**Y. Showri Keerthana**  
+B.Tech Bioinformatics  
+VFSTR University, India  
 
 ### Research Interests
 
-* Computational Biology
-* Cancer Genomics
-* Network Biology
-* Machine Learning for Biomedical Discovery
+- Computational Biology
+- Cancer Genomics
+- Network Biology
+- Machine Learning for Biomedical Discovery
