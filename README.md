@@ -9,15 +9,6 @@ A network-guided computational pipeline for identifying potential therapeutic ta
 The pipeline combines transcriptomic analysis, pathway enrichment, mutation integration, network biology, and predictive modeling to systematically prioritize candidate therapeutic targets.
 ---
 
-## Graphical Overview of the Analysis Pipeline
-
-The following figure summarizes the computational workflow used for identifying therapeutic targets in Triple-Negative Breast Cancer (TNBC).
-
-![Pipeline Overview](figures/pipeline_overview.png)
-
-*Figure: Multi-omics computational pipeline integrating TCGA transcriptomic data, pathway enrichment, network biology, and machine learning for therapeutic target discovery.*
-
----
 ## Table of Contents
 
 * [Pipeline Overview](#pipeline-overview)
@@ -133,8 +124,8 @@ TNBC-MultiOmics-Target-Discovery
 ├── figures
 │   ├── Volcano_TNBC_vs_nonTNBC.png
 │   ├── STRING_seed_network.png
-    ├── Cumulative_score_curve.png
-│   └── pipeline_overview.png
+|   ├── Cumulative_score_curve.png
+│   
 │   
 │
 ├── README.md
@@ -451,35 +442,7 @@ data_raw/TCGA_BRCA_STAR_counts_FINAL.rds
 This file serves as the primary input for downstream analyses including TNBC cohort selection, differential expression analysis, pathway enrichment, network analysis, and machine learning–based target prioritization.
 
 ---
-## Key Results Figures
-## Differential Gene Expression
 
-Differential expression analysis identified genes significantly dysregulated in TNBC compared with non-TNBC breast cancer samples.
-
-![Volcano Plot](figures/Volcano_TNBC_vs_nonTNBC.png)
-
-Key upregulated and downregulated genes highlight transcriptional programs associated with tumor progression.
-
----
-
-## STRING Protein Interaction Network
-
-Protein–protein interaction analysis using the STRING database identified central hub genes within the TNBC regulatory network.
-
-![STRING Network](figures/STRING_seed_network.png)
-
-Highly connected hub genes such as **TP53, EGFR, ESR1, CDK1, and AURKA** represent key regulatory nodes and potential therapeutic targets.
-
----
-
-## Machine Learning Target Ranking
-
-Machine learning models were used to prioritize candidate therapeutic targets by integrating transcriptomic signals and network topology.
-
-![ML Target Ranking](figures/Cumulative_score_curve.png)
-
-Genes ranked highest by the model represent strong candidates for further biological validation.
----
 ## Key Findings
 
 - Differential expression analysis identified key genes dysregulated in TNBC compared with other breast cancer subtypes.
