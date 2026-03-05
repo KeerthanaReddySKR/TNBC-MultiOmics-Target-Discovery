@@ -1,3 +1,7 @@
+![R](https://img.shields.io/badge/R-4.3-blue)
+![TCGA](https://img.shields.io/badge/Data-TCGA_BRCA-red)
+![Machine Learning](https://img.shields.io/badge/Analysis-Machine%20Learning-green)
+![Status](https://img.shields.io/badge/Project-Complete-brightgreen)
 # TNBC Multi-Omics Target Discovery
 
 A network-guided computational pipeline for identifying potential therapeutic targets in **Triple-Negative Breast Cancer (TNBC)** by integrating **TCGA transcriptomic data**, **protein–protein interaction networks**, and **machine learning-based prioritization**.
@@ -176,8 +180,6 @@ Object summary:
 Class: SummarizedExperiment  
 Dimensions: 60,664 genes × 1,231 samples  
 Assay: raw STAR count matrix
-
-## Results
 
 ### Cohort Construction
 
@@ -414,6 +416,35 @@ data_raw/TCGA_BRCA_STAR_counts_FINAL.rds
 This file serves as the primary input for downstream analyses including TNBC cohort selection, differential expression analysis, pathway enrichment, network analysis, and machine learning–based target prioritization.
 
 ---
+## Key Results Figures
+
+### Differential Expression Analysis
+
+The volcano plot highlights genes significantly upregulated and downregulated in TNBC compared to non-TNBC samples.
+
+![Volcano Plot](figures/Volcano_TNBC_vs_nonTNBC.png)
+
+Genes with high log2 fold-change and strong statistical significance represent transcriptional programs driving TNBC biology.
+
+---
+
+### STRING Protein Interaction Network
+
+Protein–protein interaction analysis using the STRING database identified central hub genes within the TNBC regulatory network.
+
+![STRING Network](figures/STRING_network.png)
+
+Highly connected hub genes such as **TP53, EGFR, ESR1, CDK1, and AURKA** represent key regulatory nodes and potential therapeutic targets.
+
+---
+
+### Machine Learning Target Ranking
+
+Machine learning models were used to prioritize candidate therapeutic targets by integrating transcriptomic signals and network topology.
+
+![ML Target Ranking](figures/ML_target_ranking.png)
+
+Genes ranked highest by the model represent strong candidates for further biological validation.
 
 # Reproducibility
 
