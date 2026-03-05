@@ -44,9 +44,9 @@ Machine Learning Target Ranking
 Final Therapeutic Targets
 ```
 
-For a detailed description of the pipeline steps:
+For a step-by-step explanation of each stage of the analysis pipeline, see the detailed documentation:
 
-[Detailed Pipeline Documentation](figures/pipeline_overview.md)
+[Pipeline Step Documentation](docs/pipeline_overview.md)
 
 ---
 
