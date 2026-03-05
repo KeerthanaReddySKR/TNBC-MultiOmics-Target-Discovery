@@ -1,0 +1,11 @@
+# ------------------------------------------------------------
+# Save session information
+# ------------------------------------------------------------
+
+session_file <- "results/session_info.txt"
+
+sink(session_file)
+sessionInfo()
+sink()
+
+cat("Session information saved to:", session_file, "\n")
