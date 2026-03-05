@@ -7,31 +7,20 @@ The pipeline integrates transcriptomic analysis, mutation data, protein–protei
 
 # Pipeline Overview
 
-The computational pipeline follows the workflow below:
+The computational pipeline consists of the following stages:
 
-TCGA BRCA Dataset  
-↓  
-Expression Import & Audit  
-↓  
-Sample Quality Control  
-↓  
-TNBC Cohort Selection  
-↓  
-Differential Expression Analysis (limma)  
-↓  
-Gene Set Enrichment Analysis (MSigDB Hallmark)  
-↓  
-Mutation Data Integration  
-↓  
-STRING Protein–Protein Interaction Network  
-↓  
-Network Sensitivity Analysis  
-↓  
-Machine Learning Target Ranking  
-↓  
-STRING Gene Cutoff Determination  
-↓  
-Final Therapeutic Target Identification  
+1. TCGA BRCA Dataset Acquisition  
+2. Expression Data Import and Audit  
+3. Sample Quality Control  
+4. TNBC Cohort Selection  
+5. Differential Expression Analysis (limma)  
+6. Gene Set Enrichment Analysis (MSigDB Hallmark)  
+7. Mutation Data Integration  
+8. STRING Protein–Protein Interaction Network Construction  
+9. Network Sensitivity Analysis  
+10. Machine Learning Target Ranking  
+11. STRING Gene Cutoff Determination  
+12. Final Therapeutic Target Identification  
 
 ---
 
@@ -39,11 +28,11 @@ Final Therapeutic Target Identification
 
 **Source:** The Cancer Genome Atlas (TCGA)
 
-Datasets used in this project:
+Datasets used in this project include:
 
-- TCGA-BRCA RNA-seq transcriptomic data
-- Clinical metadata
-- Somatic mutation data
+- TCGA-BRCA RNA-seq transcriptomic data  
+- Clinical metadata  
+- Somatic mutation data  
 
 The dataset was filtered to extract **Triple-Negative Breast Cancer (TNBC)** samples based on receptor status.
 
@@ -59,17 +48,17 @@ scripts/01_import_and_audit_expression.R
 
 This step imports the TCGA RNA-seq expression matrix and verifies data integrity.
 
-Operations performed:
+Key operations:
 
 - Load expression matrix from TCGA Xena
-- Convert expression table into a gene × sample matrix
-- Verify TCGA barcode structure
+- Convert expression table into gene × sample matrix
+- Verify TCGA barcode format
 - Detect duplicate genes or samples
 - Load clinical metadata
-- Identify overlapping samples between expression and clinical data
+- Identify overlapping samples between expression and clinical datasets
 - Subset expression matrix to valid samples
 
-Output:
+Output generated:
 
 data_processed/expr_clean.rds
 
@@ -83,23 +72,23 @@ Script:
 
 scripts/02_define_TNBC_and_build_labels.R
 
-TNBC samples are defined using receptor status information from clinical annotations.
+TNBC samples are defined based on receptor status from clinical annotations.
 
 Criteria used:
 
-- ER negative
-- PR negative
-- HER2 negative
+- ER negative  
+- PR negative  
+- HER2 negative  
 
 Processing steps include:
 
-- Extract receptor status from clinical table
+- Extract receptor status from clinical data
 - Normalize receptor status labels
 - Identify TNBC samples
 - Remove samples with missing receptor information
-- Generate TNBC classification labels
+- Construct TNBC classification labels
 
-Outputs:
+Outputs generated:
 
 data_processed/BRCA_TNBC_labels.rds  
 data_processed/BRCA_TNBC_labels.tsv  
@@ -114,21 +103,21 @@ scripts/00_QC_sample_flow.R
 
 This script summarizes how raw TCGA samples were filtered during preprocessing.
 
-The script:
+The script performs:
 
-- Loads the raw expression dataset
-- Loads the cleaned dataset
-- Compares number of genes and samples
-- Reports how many samples were removed during QC
+- Loading of raw expression dataset
+- Loading of cleaned dataset
+- Comparison of sample counts
+- Reporting number of removed samples during QC
 
-Output:
+Output generated:
 
 results/QC_sample_flow_summary.tsv
 
 This file summarizes:
 
-- Total downloaded samples
-- Final samples used in analysis
+- Downloaded samples
+- Final samples used
 - Samples removed during quality control
 
 ---
@@ -147,7 +136,7 @@ limma
 
 Outputs include:
 
-- Log fold change
+- Log fold change values
 - Adjusted p-values
 - Ranked gene lists
 
@@ -163,7 +152,7 @@ Script:
 
 scripts/06_GSEA_hallmark_analysis.R
 
-Gene Set Enrichment Analysis (GSEA) identifies biological pathways associated with TNBC gene expression.
+Gene Set Enrichment Analysis (GSEA) identifies biological pathways associated with TNBC gene expression patterns.
 
 Database used:
 
@@ -192,9 +181,9 @@ Somatic mutation data from TCGA are integrated with transcriptomic results.
 This step helps identify genes that are both:
 
 - Differentially expressed
-- Mutated in TNBC
+- Mutationally altered in TNBC
 
-Combining expression and mutation information improves biological relevance for downstream analysis.
+Combining expression and mutation information improves biological interpretation.
 
 ---
 
@@ -204,12 +193,12 @@ Script:
 
 scripts/08_STRING_network_analysis.R
 
-A protein–protein interaction network is constructed using the STRING database.
+Protein–protein interaction networks are constructed using the **STRING database**.
 
-Purpose:
+Purpose of this step:
 
 - Identify functional interactions among dysregulated genes
-- Detect network modules related to TNBC biology
+- Detect network modules associated with TNBC biology
 
 Results stored in:
 
@@ -223,13 +212,13 @@ Script:
 
 scripts/08b_network_sensitivity_analysis.R
 
-Network sensitivity analysis evaluates the robustness of the STRING interaction network.
+Network sensitivity analysis evaluates the robustness of the protein interaction network.
 
-This step helps determine:
+This step identifies:
 
-- Network stability
-- Key regulatory genes
-- Highly connected nodes in the interaction network
+- Highly connected genes
+- Influential nodes
+- Potential regulatory hubs
 
 ---
 
@@ -239,16 +228,16 @@ Script:
 
 scripts/10_network_guided_ML_target_ranking.R
 
-Machine learning models are used to prioritize candidate genes.
+Machine learning models are used to prioritize candidate therapeutic targets.
 
-Features used include:
+Features used for ranking include:
 
 - Differential expression magnitude
-- Pathway enrichment signals
+- Pathway enrichment information
 - Mutation status
 - Network connectivity
 
-Model performance is evaluated using **nested cross-validation**.
+Models are evaluated using **nested cross-validation**.
 
 Results stored in:
 
@@ -262,13 +251,13 @@ Script:
 
 scripts/11_define_STRING_gene_cutoff.R
 
-To determine an objective cutoff for STRING network analysis, cumulative contribution of normalized gene scores is calculated.
+An objective cutoff for STRING network analysis is determined using cumulative contribution of normalized gene scores.
 
 Steps include:
 
 - Normalize gene importance scores
 - Compute cumulative contribution
-- Identify gene thresholds representing **85% and 90% of signal**
+- Identify thresholds covering **85% and 90% of signal**
 
 Outputs generated:
 
@@ -278,7 +267,7 @@ Cumulative_score_curve.png
 
 ---
 
-# Final Outputs
+# Pipeline Outputs
 
 The pipeline generates several intermediate and final outputs including:
 
@@ -298,24 +287,9 @@ All outputs are organized within the **results/** directory.
 
 To reproduce the analysis:
 
-1. Download TCGA BRCA RNA-seq data.
+1. Download TCGA BRCA RNA-seq data.  
 2. Install required R packages listed in:
 
 environment/software_environment.md
 
 3. Execute scripts sequentially from the **scripts/** directory.
-
----
-
-# Author
-
-Y. Showri Keerthana  
-B.Tech Bioinformatics  
-VFSTR University, India
-
-Research Interests:
-
-- Computational Biology
-- Cancer Genomics
-- Network Biology
-- Machine Learning for Biomedical Discovery
