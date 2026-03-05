@@ -2,4 +2,4 @@
 
 See the detailed pipeline here:
 
-[Pipeline Overview](figures/pipeline_overview.md)
+[Pipeline Overview](pipeline_overview.md)
