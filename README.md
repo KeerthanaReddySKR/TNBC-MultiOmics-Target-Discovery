@@ -1,6 +1,6 @@
 # TNBC Multi-Omics Target Discovery
 
-A network-guided computational pipeline for identifying potential therapeutic targets in **Triple-Negative Breast Cancer (TNBC)** using **TCGA transcriptomic data, protein–protein interaction networks, and machine learning–based prioritization**.
+A network-guided computational pipeline for identifying potential therapeutic targets in **Triple-Negative Breast Cancer (TNBC)** using **TCGA transcriptomic data, protein–protein interaction networks, and machine learning-based prioritization**.
 
 This project integrates transcriptomic analysis, pathway enrichment, mutation integration, network biology, and machine learning to systematically prioritize candidate therapeutic targets.
 
@@ -10,9 +10,33 @@ This project integrates transcriptomic analysis, pathway enrichment, mutation in
 
 This pipeline processes TCGA breast cancer transcriptomic data to identify TNBC-specific gene expression patterns and prioritize therapeutic targets through network-guided machine learning.
 
-See the detailed pipeline diagram here:
+## Computational Workflow
 
-[Pipeline Overview](figures/pipeline_overview.md)
+```
+TCGA BRCA Dataset
+        ↓
+Sample QC & Filtering
+        ↓
+TNBC Cohort Selection
+        ↓
+Differential Expression (limma)
+        ↓
+GSEA Pathway Analysis
+        ↓
+Mutation Integration
+        ↓
+STRING PPI Network
+        ↓
+Network Sensitivity Analysis
+        ↓
+Machine Learning Target Ranking
+        ↓
+Final Therapeutic Targets
+```
+
+For a detailed description of the pipeline steps:
+
+[Detailed Pipeline Documentation](figures/pipeline_overview.md)
 
 ---
 
@@ -20,9 +44,9 @@ See the detailed pipeline diagram here:
 
 **Source:** The Cancer Genome Atlas (TCGA)
 
-Dataset used:
+Datasets used in this project:
 
-* **TCGA-BRCA RNA-seq expression data**
+* **TCGA-BRCA RNA-seq transcriptomic data**
 * **Clinical metadata**
 * **Somatic mutation data**
 
@@ -94,21 +118,21 @@ TNBC-MultiOmics-Target-Discovery
 
 # Key Methods and Tools
 
-The pipeline uses the following computational tools and resources:
+The pipeline integrates multiple computational biology tools and resources:
 
-* **R**
+* **R programming language**
 * **limma** for differential expression analysis
-* **MSigDB Hallmark pathways** for gene set enrichment
-* **STRING database** for protein interaction networks
-* **Machine learning models** for target prioritization
+* **MSigDB Hallmark pathways** for gene set enrichment analysis
+* **STRING database** for protein–protein interaction networks
+* **Machine learning models** for therapeutic target prioritization
 
 ---
 
 # Results
 
-The pipeline identifies candidate genes that may serve as **therapeutic targets in TNBC** by integrating transcriptomic signals with protein interaction networks and predictive modeling.
+The pipeline identifies candidate genes that may serve as **therapeutic targets in Triple-Negative Breast Cancer (TNBC)** by integrating transcriptomic signals with protein interaction networks and predictive modeling.
 
-Intermediate outputs and final results are organized under the **results/** directory.
+Intermediate outputs and final results are organized within the **results/** directory.
 
 ---
 
@@ -123,7 +147,7 @@ To reproduce the analysis:
 environment/software_environment.md
 ```
 
-3. Execute the scripts sequentially from the `scripts/` directory.
+3. Execute the scripts sequentially from the **scripts/** directory.
 
 ---
 
@@ -133,7 +157,7 @@ environment/software_environment.md
 B.Tech Bioinformatics
 VFSTR University, India
 
-Research interests:
+### Research Interests
 
 * Computational Biology
 * Cancer Genomics
