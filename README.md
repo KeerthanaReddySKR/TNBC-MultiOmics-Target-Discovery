@@ -52,7 +52,21 @@ Machine Learning Target Ranking
         ↓
 Final Therapeutic Targets
 ```
+```mermaid
+flowchart TD
 
+A[TCGA BRCA RNA-seq Dataset]:::data --> B[Sample Quality Control]
+B --> C[TNBC Cohort Selection]
+C --> D[Differential Expression Analysis]
+D --> E[GSEA Pathway Analysis]
+E --> F[Mutation Integration]
+F --> G[STRING Network]
+G --> H[Network Sensitivity Analysis]
+H --> I[Machine Learning Target Ranking]
+I --> J[Final Therapeutic Targets]
+
+classDef data fill:#f9f,stroke:#333,stroke-width:1px;
+```
 For a detailed explanation of each stage of the analysis pipeline see:
 
 **[Pipeline Step Documentation](docs/pipeline_overview.md)**
