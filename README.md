@@ -143,6 +143,47 @@ The pipeline integrates multiple computational biology tools and resources:
 The pipeline identifies candidate genes that may serve as **therapeutic targets in Triple-Negative Breast Cancer (TNBC)** by integrating transcriptomic signals with protein interaction networks and predictive modeling.
 
 Intermediate outputs and final results are organized within the **results/** directory.
+## Results
+
+### TCGA Data Acquisition
+
+RNA-seq gene expression data for the TCGA Breast Cancer (BRCA) cohort was downloaded using the TCGAbiolinks package.
+
+Dataset characteristics:
+
+- Total samples: 1231
+- Data type: Gene Expression Quantification
+- Workflow: STAR – Counts
+- Reference genome: hg38
+
+### Expression Matrix Construction
+
+Raw STAR count files were processed and merged into a unified expression matrix.
+
+Final matrix dimensions:
+
+- Genes: 60,664
+- Samples: 1,231
+
+Each column corresponds to a TCGA sample, and each row represents a gene feature.
+
+### Data Structure
+
+The expression matrix was converted into a Bioconductor `SummarizedExperiment` object for compatibility with downstream genomic analysis tools.
+
+Object summary:
+
+Class: SummarizedExperiment  
+Dimensions: 60,664 genes × 1,231 samples  
+Assay: raw STAR count matrix
+
+### Final Dataset
+
+The processed dataset was saved in R serialized format:
+
+data_raw/TCGA_BRCA_STAR_counts_FINAL.rds
+
+This file serves as the primary input for downstream analyses including TNBC cohort selection, differential expression analysis, pathway enrichment, network analysis, and machine learning–based target prioritization.
 
 ---
 
