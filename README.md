@@ -1,7 +1,7 @@
 ![R](https://img.shields.io/badge/R-4.3-blue)
 ![TCGA](https://img.shields.io/badge/Data-TCGA_BRCA-red)
 ![Machine Learning](https://img.shields.io/badge/Analysis-Machine%20Learning-green)
-![Status](https://img.shields.io/badge/Project-In-Progress-brightgreen)
+![Status](https://img.shields.io/badge/Project-ongoing (research in progress)-brightgreen)
 
 # TNBC Multi-Omics Target Discovery
 
