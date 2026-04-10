@@ -3,7 +3,7 @@
 ![Machine Learning](https://img.shields.io/badge/Analysis-Machine%20Learning-green)
 ![Status](https://img.shields.io/badge/Project-Ongoing-brightgreen)
 
-# TNBC Multi-Omics Target Discovery
+# TNBC Multi-Omics Target Discover
 
 A **network-guided computational framework** for identifying potential therapeutic targets in **Triple-Negative Breast Cancer (TNBC)** through the integration of **TCGA transcriptomic data**, **protein–protein interaction networks**, and **machine learning–based target prioritization**.
 
