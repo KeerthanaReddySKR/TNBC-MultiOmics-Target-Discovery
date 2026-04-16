@@ -173,6 +173,8 @@ Intermediate outputs and final results are organized within the **results/** dir
 ---
 
 ## Key Result Visualizations
+### PCA
+<img width="2250" height="1800" alt="PCA_expr1218_TNBC" src="https://github.com/user-attachments/assets/85a069ab-cb4a-42fb-8c39-66e65e18d5b8" />
 
 ### Differential Gene Expression
 Differential expression analysis was performed using limma with empirical Bayes moderation. Genes with FDR < 0.05 and |log2FC| ≥ 1 were considered significantly differentially expressed.
